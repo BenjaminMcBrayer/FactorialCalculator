@@ -1,3 +1,4 @@
+
 //Benjamin McBrayer, 4.26.2018
 //This Java console program calculates the factorial of a number.
 
@@ -7,9 +8,8 @@ public class CalculateFactorial {
 
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
-
+		
 		int userNum;
-		long f = 1;
 		String userInfo = null;
 		String playAgain = null;
 
@@ -21,10 +21,11 @@ public class CalculateFactorial {
 		System.out.println("Hello, " + userInfo + "!");
 
 		do {// Prompt user to enter an integer.
-			System.out.println("Enter an integer that's greater than 0 but less than 10: ");
+			long f = 1;
+			System.out.println("Enter an integer that's greater than 0 but less than 20: ");
 			userNum = scnr.nextInt();
-			// Verify that 0 < userNum < 10.
-			if (userNum > 0 && userNum < 10) {
+			// Verify that 0 < userNum < 20.
+			if (userNum > 0 && userNum < 20) {
 				// Calculate the factorial.
 				for (int i = 1; i <= userNum; ++i) {
 					f = f * i;
