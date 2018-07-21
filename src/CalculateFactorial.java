@@ -9,7 +9,7 @@ public class CalculateFactorial {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		
-		int userNum;
+		int userNum = 0;
 		String userInfo = null;
 		String playAgain = null;
 
@@ -21,15 +21,13 @@ public class CalculateFactorial {
 		System.out.println("Hello, " + userInfo + "!");
 
 		do {// Prompt user to enter an integer.
-			long f = 1;
 			System.out.println("Enter an integer that's greater than 0 but less than 20: ");
 			userNum = scnr.nextInt();
+			long f = 1;
 			// Verify that 0 < userNum < 20.
 			if (userNum > 0 && userNum < 20) {
 				// Calculate the factorial.
-				for (int i = 1; i <= userNum; ++i) {
-					f = f * i;
-				}
+				f = factorial(userNum, f);
 				System.out.println("The factorial of " + userNum + " is " + f + ".");
 			} else {
 				System.out.println("Your number is not within the specified range.");
@@ -46,6 +44,13 @@ public class CalculateFactorial {
 		System.out.println("Goodbye, " + userInfo + "!");
 
 		scnr.close();
+	}
+
+	public static long factorial(int userNum, long f) {
+		for (int i = 1; i <= userNum; ++i) {
+			f *= i;
+		}
+		return f;
 	}
 
 }
